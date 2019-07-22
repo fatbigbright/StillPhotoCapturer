@@ -12,9 +12,11 @@ $(document).ready(function(){
     if(navigator.mozGetUserMedia){
       $('#video').attr('mozSrcObject', stream);
     } else {
-      var vendorURL = window.URL || window.webkitURL;
-      var src = vendorURL.createObjectURL(stream);
-      $('#video').attr('src', src);
+      //var vendorURL = window.URL || window.webkitURL;
+			//var vendorURL = window.URL;
+      //var src = vendorURL.createObjectURL(stream);
+      //$('#video').attr('src', src);
+			$('#video')[0].srcObject = stream;
     }
     $('#video')[0].play();
   },
